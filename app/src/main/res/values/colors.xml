@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#AFF998</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="myCustomDarkFontColor">#221e1e</color>
+    <color name="myCustomFontColor">#dad657</color>
+</resources>
