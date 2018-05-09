@@ -10,7 +10,7 @@ public class Walk {
     private String duration;
     private String numOfSteps;
 
-    public Walk(String name, String duration, String numOfSteps) {
+    Walk(String name, String duration, String numOfSteps) {
         this.name = name;
         this.duration = duration;
         this.numOfSteps = numOfSteps;

@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">android_zad3</string>
+    <string name="app_name">Walking simulator</string>
     <string name="title_activity_maps">Map</string>
     <string name="travel_time_string">Czas podróży</string>
     <string name="num_of_steps_string">Liczba "kroków"</string>
     <string name="start_string">Start</string>
+    <string name="stop_string">Stop</string>
     <string name="_0_00_string">0:00</string>
+    <string name="save_string">Save</string>
+    <string name="name_string">Nazwa</string>
+    <string name="reset_string">Reset</string>
+    <string name="zeros_string">0:00</string>
+    <string name="zero_string">0</string>
 </resources>

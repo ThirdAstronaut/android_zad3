@@ -1,5 +1,7 @@
 package lab.swim.pwr.android_zad3;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
@@ -21,6 +23,7 @@ public class SwipeHelper extends ItemTouchHelper.SimpleCallback {
         return false;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
         mCustomAdapter.removeItem(viewHolder.getAdapterPosition());

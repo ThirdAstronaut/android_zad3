@@ -7,7 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
-import android.util.Log;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -37,15 +36,11 @@ public class MapPane extends Activity implements OnMapReadyCallback {
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        // Customise the styling of the base map using a JSON object defined
-        // in a raw resource file.
         MapStyleOptions style;
-        if (lightValue == "Dark") {
-            style = MapStyleOptions.loadRawResourceStyle(
-                    this, R.raw.style_json);
+        if (lightValue.equals("Dark")) {
+            style = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_json);
         } else
-            style = MapStyleOptions.loadRawResourceStyle(
-                    this, R.raw.style_retro_json);
+            style = MapStyleOptions.loadRawResourceStyle(this, R.raw.style_retro_json);
         googleMap.setMapStyle(style);
     }
 
@@ -53,26 +48,15 @@ public class MapPane extends Activity implements OnMapReadyCallback {
     private BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            // Get extra data included in the Intent
-            String message = intent.getStringExtra("LightValue");
-            Log.d("receiver", "Got message: " + message);
-            /*setTheme(android.R.style.Theme_Black);
-            findViewById(R.id.main_layout).setBackgroundColor(4242);
 
-
-*/
-
-            lightValue = message;
-
+            lightValue = intent.getStringExtra("LightValue");
         }
     };
 
     @Override
     protected void onDestroy() {
-        // Unregister since the activity is about to be closed.
         LocalBroadcastManager.getInstance(this).unregisterReceiver(mMessageReceiver);
         super.onDestroy();
     }
-
 }
 

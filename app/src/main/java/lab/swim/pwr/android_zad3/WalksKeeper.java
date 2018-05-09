@@ -18,8 +18,8 @@ public class WalksKeeper {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private WalksKeeper() {
         mWalksList = new ArrayList<>();
-        for (int i = 10; i < 41; i++) {
-            mWalksList.add(new Walk("Walk no. " + i, "05:" + i, String.valueOf(ThreadLocalRandom.current().nextInt(1000))));
+        for (int i = 0; i < 1000; i++) {
+            mWalksList.add(new Walk("Walk no. " + i, (i+5)%60+":" + i%60, String.valueOf(ThreadLocalRandom.current().nextInt(1000))));
         }
     }
 
